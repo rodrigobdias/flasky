@@ -1,16 +1,17 @@
 from flask import Flask, redirect, request
 from flask import render_template
 from flask_bootstrap import Bootstrap
+from flask_moment import Moment
+from datetime import datetime
 
 app = Flask(__name__)
 
 bootstrap = Bootstrap(app)
+moment = Moment(app)
 
 @app.route('/')
 def index():
-    user_agente = request.headers.get('User-Agente')
-    return render_template('index.html', user_agente = user_agente)
-
+    return render_template('index.html', current_time=datetime.utcnow())
 
 @app.route('/user/<name>')
 def user(name):
