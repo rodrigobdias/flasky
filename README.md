@@ -7,3 +7,5 @@ flask
 flask-bootstrap
 
 flask-moment
+
+flask-wtf
