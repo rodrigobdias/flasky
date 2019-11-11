@@ -9,3 +9,5 @@ flask-bootstrap
 flask-moment
 
 flask-wtf
+
+flask-sqlalchemy
