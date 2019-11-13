@@ -11,3 +11,7 @@ flask-moment
 flask-wtf
 
 flask-sqlalchemy
+
+flask-migrate
+
+
