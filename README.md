@@ -14,4 +14,6 @@ flask-sqlalchemy
 
 flask-migrate
 
+flask-mail
+
 
