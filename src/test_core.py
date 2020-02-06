@@ -2,7 +2,7 @@
 import unittest
 
 
-from src.hello_test import get_format_name
+from hello_test import get_format_name
 
 
 class NamesTestCase(unittest.TestCase):
