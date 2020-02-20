@@ -1,4 +1,4 @@
-FROM python:3.5
+FROM python:3.5-alpine
 
 
 COPY requirements.txt /opt/flasky_app/requirements.txt
