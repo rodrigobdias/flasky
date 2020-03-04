@@ -1,9 +1,11 @@
 from datetime import datetime
-from flask import render_template, session, redirect, url_for
-from . import main
-from .forms import NameForm
+from flask import render_template, session, redirect, url_for, current_app
 from .. import db
 from ..models import User
+from ..email import send_email
+from . import main
+from .forms import NameForm
+
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
@@ -15,9 +17,9 @@ def index():
             db.session.add(user)
             db.session.commit()
             session['known'] = False
-            if app.config['FLASKY_ADMIN']:
+            if current_app.config['FLASKY_ADMIN']:
                 pass
-                #send_email(app.config['FLASKY_ADMIN'], 'New User', 'mail/new_user', user=user)
+                #send_email(current_app.config['FLASKY_ADMIN'], 'New User', 'mail/new_user', user=user)
         else:
             session['known'] = True
         session['name'] = form.name.data
